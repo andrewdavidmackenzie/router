@@ -1,9 +1,28 @@
 package net.mackenzie_serres.router;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class RoadSystem {
+	List<RoadSystem.Section> sections;
+
+	public RoadSystem() {
+		this.sections = new ArrayList<RoadSystem.Section>();
+	}
+
+	public void addSection(RoadSystem.Section section) {
+		sections.add(section);
+	}
+
+	public boolean isEmpty() {
+		return sections.isEmpty();
+	}
+
+	public List<RoadSystem.Section> getSections() {
+		return sections;
+	}
+
 	enum Label { A, B, C }
 
 	public static class Point {

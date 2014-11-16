@@ -1,15 +1,12 @@
 package net.mackenzie_serres.router;
 
-import java.util.List;
-
 public class Optimal {
-	static RoadSystem.Path calculate(List<RoadSystem.Section> system) {
+	static RoadSystem.Path calculate(RoadSystem system) {
 		RoadSystem.Path[] bestPaths = new RoadSystem.Path[2];
 		bestPaths[0] = new RoadSystem.Path();
 		bestPaths[1] = new RoadSystem.Path();
 
-		for (RoadSystem.Section section : system) {
-			System.out.println("Section: " + section);
+		for (RoadSystem.Section section : system.getSections()) {
 			roadStep(bestPaths, section);
 		}
 
