@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="IdProvider" IDEtalkID="29677D1D35C28C842E8A2FED4C654D7B" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_6" assert-keyword="true" jdk-15="true" project-jdk-name="Lua 5.2.3" project-jdk-type="Lua SDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
+
