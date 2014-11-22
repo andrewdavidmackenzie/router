@@ -19,7 +19,6 @@ require "optimal"
 --
 function getRoadSystem(dataFileName)
     local system = RoadSystem:new();
-
     local group = {};
 
     if io.input(dataFileName) == nil then
@@ -57,15 +56,12 @@ if arg[1] == nill then
 else
     local system = getRoadSystem(arg[1]);
 
-    if system:isEmpty() then
+    if (system:getSections() == nil) then
         print("The road system is empty");
     else
-        optimal = Optimal:new();
-        local optimalPath = optimal:calculate(system);
-        print("The best path to take is: ");
-        optimalPath:toString();
-        print("\n");
-        print("Time taken: " .. optimalPath.totalTime());
+        local optimalPath = Optimal:calculate(system);
+        print("The best path to take is: " .. optimalPath:toString());
+        print("Time taken: " .. optimalPath:totalTime());
     end
 end
 
