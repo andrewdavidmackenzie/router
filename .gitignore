@@ -1,0 +1,2 @@
+# Ignore compiled go output
+go/out
