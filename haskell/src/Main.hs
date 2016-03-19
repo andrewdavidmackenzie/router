@@ -2,7 +2,6 @@ module Main where
 
 import RoadSystem
 import Optimal
-import Data.List
 
 groupsOf :: Int -> [a] -> [[a]]
 groupsOf 0 _ = undefined
