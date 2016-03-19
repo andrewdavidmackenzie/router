@@ -6,7 +6,7 @@ for l in ${languages[*]}
 do
     echo "--------------- Running for language '"$l"' ----------------------"
     cd $home/$l
-    make
+    make > /dev/null
     ./run.sh
 done
 
