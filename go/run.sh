@@ -1,5 +1,4 @@
 #!/bin/bash
-#check go is installed and warn if not
 datasets=("heathrow-london")
 for d in ${datasets[*]} 
 do

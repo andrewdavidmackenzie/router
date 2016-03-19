@@ -1,10 +1,10 @@
 package main
 
 import ("fmt"
-	    "os"
-	    "io"
-		"roads"
-		"optimal")
+	"os"
+	"io"
+	"roads"
+	"optimal")
 
 /**
  * Calculate the optimal path from the starting point to the end point through a network
