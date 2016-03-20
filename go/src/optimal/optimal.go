@@ -2,7 +2,7 @@ package optimal
 
 import "roads"
 
-func Calculate(rs * roads.System) (path * roads.Path) {
+func Calculate(rs *roads.System) (path *roads.Path) {
 	bestPaths := make([]roads.Path, 2)
 
 	for _, section := range rs.GetSections() {
@@ -24,12 +24,12 @@ func roadStep(paths []roads.Path, section roads.Section) {
 	var forwardTimeToB = timeB + section.B
 	var crossTimeToB = timeA + section.A + section.C
 
-	var oldA = paths[0]
+	var oldA = paths[0].Clone()
 
 	if (forwardTimeToA <= crossTimeToA) {
 		paths[0].AddPoint(roads.NewPoint("A", section.A))
 	} else {
-		paths[0] = paths[1]
+		paths[0] = *paths[1].Clone()
 		paths[0].AddPoint(roads.NewPoint("B", section.B))
 		paths[0].AddPoint(roads.NewPoint("C", section.C))
 	}
@@ -37,7 +37,7 @@ func roadStep(paths []roads.Path, section roads.Section) {
 	if (forwardTimeToB <= crossTimeToB) {
 		paths[1].AddPoint(roads.NewPoint("B", section.B))
 	} else {
-		paths[1] = oldA
+		paths[1] = *oldA
 		paths[1].AddPoint(roads.NewPoint("A", section.A))
 		paths[1].AddPoint(roads.NewPoint("C", section.C))
 	}

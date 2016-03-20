@@ -1,7 +1,7 @@
 package roads
 
 import ("fmt"
-		"bytes")
+	"bytes")
 
 type System struct {
 	sections []Section
@@ -60,6 +60,12 @@ func NewPath() (p * Path) {
 	p = new(Path)
 	p.points = make([]Point, 100)
 	return p
+}
+
+func (p * Path) Clone() (np * Path) {
+	np = NewPath()
+	np.AddPath(p)
+	return np
 }
 
 func (path * Path) AddPoint(point * Point) {
