@@ -4,5 +4,5 @@ datasets=("heathrow-london")
 for d in ${datasets[*]} 
 do
     echo "Running for road system '"$d"'"
-    lua main.lua ../data/$d.in
+    time lua main.lua ../data/$d.in
 done

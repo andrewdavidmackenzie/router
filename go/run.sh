@@ -3,5 +3,5 @@ datasets=("heathrow-london")
 for d in ${datasets[*]} 
 do
     echo "Running for road system '"$d"'"
-    ./router ../data/$d.in
+    time ./router ../data/$d.in
 done
