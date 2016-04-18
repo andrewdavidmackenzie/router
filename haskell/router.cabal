@@ -1,7 +1,7 @@
 -- For further documentation, see http://haskell.org/cabal/users-guide/
 
-name:                haskell
-version:             0.1.0.0
+name:                router
+version:             0.2.0.0
 synopsis:            Program to calculate optimal path from one destination to another.
 -- description:         
 license:             MIT
@@ -14,7 +14,7 @@ build-type:          Simple
 -- extra-source-files:  
 cabal-version:       >=1.10
 
-executable haskell
+executable router
   main-is:           Main.hs
   other-modules:     RoadSystem
                      Optimal
