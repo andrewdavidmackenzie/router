@@ -1,0 +1,15 @@
+#language: "c" "go" "java" "lua" "haskell" "ruby"
+
+matrix:
+  include:
+    - language: c
+      before_script:
+        - cd c
+      script:
+        - make
+
+    - language: go
+      before_script:
+        - cd go
+      script:
+        - make
