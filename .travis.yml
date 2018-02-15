@@ -8,9 +8,9 @@ matrix:
       script:
         - make
 
-    - language: go
+    - language: ruby
       before_script:
-        - cd go
+        - cd ruby
       script:
         - make
 
