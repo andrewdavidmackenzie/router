@@ -13,3 +13,9 @@ matrix:
         - cd go
       script:
         - make
+
+    - language: java
+      before_script:
+        - cd java
+      script:
+        - make
