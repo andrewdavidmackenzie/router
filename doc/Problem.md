@@ -6,51 +6,49 @@ There are two main roads going from Heathrow to London, and a num- ber of region
 
 ![](./LHR_to_LON.png "London Heathrow Airport to London")
 
-As you can see in the picture, the quickest path from Heathrow to Lon- don in this case is to start on main road B, cross over, go forward on A, cross over again, and then go forward twice on B. If we take this path, it takes us 75 minutes. Had we chosen any other path, it would take longer.
+As you can see in the picture, the quickest path from Heathrow to London in this case is to start on main road B, cross over, go forward on A, cross over again, and then go forward twice on B. If we take this path, it takes us 75 minutes. Had we chosen any other path, it would take longer.
 
 Our job is to make a program that takes input that represents a road sys- tem and prints out the quickest path across it. Here’s what the input would look like for this case:
 
-50
-10
-30
-5
-90
-20
-40
-2
-25
-10
-8
-0
+50   
+10   
+30   
+5   
+90   
+20   
+40   
+2   
+25   
+10   
+8   
+0   
 
-To mentally parse the input file, read it in threes and mentally split the road system into sections. Each section is composed of road A, road B, and a crossing road. To have it neatly fit into threes, we say that there’s a last cross- ing section that takes 0 minutes to drive over. That’s because we don’t care where we arrive in London, as long as we’re in London, mate!
+To parse the input file, read in the numbers in threes and split the road system into sections. Each section is composed of road A, road B, and a crossing road. To have it neatly fit into threes, we say that there’s a last crossing section that takes 0 minutes to drive over. That’s because we don’t care where we arrive in London, as long as we’re in London, mate!
 
 Just as we did when considering the RPN calculator problem, we’ll solve this problem in three steps:
 
-1. Forget Haskell for a minute and think about how to solve the problem by hand. In the RPN calculator section, we first figured out that when calculating an expression by hand, we keep a sort of stack in our minds and then go over the expression one item at a time.
+1. Forget programming for a minute and think about how to solve the problem by hand.
 
-2. Think about how we’re going to represent our data in Haskell. For our RPN calculator, we decided to use a list of strings to represent our expression.
+2. Think about how we’re going to represent our data.
 
-3. Figure out how to operate on that data in Haskell so that we produce a solution. For the calculator, we used a left fold to walk over the list of strings, while keeping a stack to produce a solution.
+3. Figure out how to operate on that data so that we produce a solution.
 
 Calculating the Quickest Path
 -----------------------------
-So how do we figure out the quickest path from Heathrow to London by hand? Well, we can just look at the whole picture and try to guess what the quickest path is and hope our guess is correct. That solution works for very small inputs, but what if we have a road that has 10,000 sections? Yikes! We also won’t be able to say for certain that our solution is the optimal one; we can just say that we’re pretty sure. So, that’s not a good solution.
+So how do we figure out the quickest path from Heathrow to London? 
 
 Here’s a simplified picture of our road system:
 
 ![](./RoadSystem.png "Road System")
 
-
 Can we figure out the quickest path to the first crossroads (the first dot on A, marked A1) on road A?
 That’s pretty trivial. 
 We just see if it’s faster to go directly forward on A or to go forward on B and then cross over. 
 
-Obviously, it’s faster to go forward via B and then cross over, because that takes 40 minutes, whereas going directly via A takes 50 minutes. 
+In this case it’s faster to go forward via B and then cross over, because that takes 40 minutes, whereas going directly via A takes 50 minutes. 
 What about crossroads B1? We see that it’s a lot faster to just go directly via B (incurring a cost of 10 minutes), because going via A and then crossing over would take us 80 minutes!
 
-Now we know the quickest path to A1: Go via B and then cross over. 
-We’ll say that’s path B, C with a cost of 40 minutes. 
+Now we know the quickest path to A1: Go via B and then cross over. We’ll say that’s path B, C with a cost of 40 minutes. 
 
 We also know the quickest path to B1: Go directly via B. So that’s a path consisting just of B for 10 minutes. 
 

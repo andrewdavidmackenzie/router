@@ -1,5 +1,5 @@
 #!/bin/bash
-languages=("c" "go" "java" "lua" "haskell" "ruby")
+languages=("c" "go" "java" "lua" "haskell" "ruby" "rust")
 home=`pwd`
 for l in ${languages[*]}
 do
