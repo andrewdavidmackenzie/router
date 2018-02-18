@@ -12,7 +12,7 @@ matrix:
       script:
         - make
 
-    - language: java
+    - language: jdk
       before_script:
         - cd java
       script:
@@ -30,7 +30,7 @@ matrix:
       script:
         - make
 
-    - language: ghc
+    - language: haskell
       before_script:
         - cd haskell
       script:
