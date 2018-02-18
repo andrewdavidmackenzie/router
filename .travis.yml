@@ -30,7 +30,7 @@ matrix:
       script:
         - make
 
-    - language: haskell
+    - language: ghc
       before_script:
         - cd haskell
       script:
