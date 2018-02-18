@@ -1,5 +1,3 @@
-#language: "c" "go" "java" "lua" "haskell" "ruby"
-
 matrix:
   include:
     - language: c
@@ -17,5 +15,23 @@ matrix:
     - language: java
       before_script:
         - cd java
+      script:
+        - make
+
+    - language: rust
+      before_script:
+        - cd rust
+      script:
+        - make
+
+    - language: lua
+      before_script:
+        - cd lua
+      script:
+        - make
+
+    - language: haskell
+      before_script:
+        - cd haskell
       script:
         - make
