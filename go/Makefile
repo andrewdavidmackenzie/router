@@ -1,3 +1,2 @@
-GOPATH=$GOPATH:$(shell pwd)
 default:
-	go build src/router.go
+	cd src;go build router.go;cd -
