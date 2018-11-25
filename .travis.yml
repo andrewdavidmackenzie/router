@@ -8,8 +8,6 @@ matrix:
 
     - language: go
       go_import_path: go
-      before_install:
-        - cd go
       before_script:
         - cd go
       script:
