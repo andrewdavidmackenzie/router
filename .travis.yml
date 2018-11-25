@@ -7,6 +7,7 @@ matrix:
         - make
 
     - language: go
+      go_import_path: go
       before_script:
         - cd go
       script:
