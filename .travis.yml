@@ -21,8 +21,7 @@ matrix:
         - make
 
     - language: java
-      jdk:
-         - oraclejdk8
+      install:
       before_script:
         - cd $TRAVIS_BUILD_DIR/java
       script:
