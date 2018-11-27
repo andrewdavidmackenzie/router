@@ -40,7 +40,7 @@ matrix:
 
     - language: haskell
       install: |
-          cd haskell;cabal install
+          cd $TRAVIS_BUILD_DIR/haskell;cabal install
       before_script:
         - cd haskell
       script:
