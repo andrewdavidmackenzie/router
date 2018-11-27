@@ -1,5 +1,6 @@
 Router
 =
+[![Build Status](https://travis-ci.org/andrewdavidmackenzie/router.svg?branch=master)](https://travis-ci.org/andrewdavidmackenzie/router)
 
 This repo contains multiple implementations in different programming languages of a very simple algorithm to find the shortest route through a simple network of roads.
 
