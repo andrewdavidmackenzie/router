@@ -22,7 +22,7 @@ matrix:
 
     - language: jdk
       before_script:
-        - cd java
+        - cd $TRAVIS_BUILD_DIR/java
       script:
         - make
 
