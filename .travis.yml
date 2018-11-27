@@ -42,6 +42,6 @@ matrix:
       install: |
           cd $TRAVIS_BUILD_DIR/haskell;cabal install
       before_script:
-        - cd haskell
+        - cd cd $TRAVIS_BUILD_DIR/haskell
       script:
         - make
