@@ -40,7 +40,7 @@ matrix:
 
     - language: haskell
       install: |
-          cabal install
+          cd haskell;cabal install
       before_script:
         - cd haskell
       script:
