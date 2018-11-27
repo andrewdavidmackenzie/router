@@ -2,7 +2,7 @@ matrix:
   include:
     - language: c
       before_script:
-        - cd c
+        - cd $TRAVIS_BUILD_DIR/c
       script:
         - make
 
@@ -10,17 +10,19 @@ matrix:
       install: |
           go get -t -v go/...
       before_script:
-        - cd go
+        - cd $TRAVIS_BUILD_DIR/go
       script:
         - make
 
     - language: ruby
       before_script:
-        - cd ruby
+        - cd $TRAVIS_BUILD_DIR/ruby
       script:
         - make
 
-    - language: jdk
+    - language: java
+      jdk:
+         - oraclejdk8
       before_script:
         - cd $TRAVIS_BUILD_DIR/java
       script:
@@ -28,13 +30,13 @@ matrix:
 
     - language: rust
       before_script:
-        - cd rust
+        - cd $TRAVIS_BUILD_DIR/rust
       script:
         - make
 
     - language: lua
       before_script:
-        - cd lua
+        - cd $TRAVIS_BUILD_DIR/lua
       script:
         - make
 
